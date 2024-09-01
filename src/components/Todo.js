@@ -36,6 +36,7 @@ export default function Todo({ todo, ShowDelete, shwoUpdate }) {
         sx={{
           minWidth: 275,
           color: "#3c3c3c",
+          backgroundColor: "transparent",
           marginTop: 5,
         }}
       >
@@ -70,7 +71,7 @@ export default function Todo({ todo, ShowDelete, shwoUpdate }) {
                 aria-label="delete"
                 style={{
                   color: todo.isCompleted ? "white" : "gray",
-                  background: todo.isCompleted ? "#f50057" : "white",
+                  background: todo.isCompleted ? "#f50057" : "",
                 }}
               >
                 <CheckIcon />
@@ -82,7 +83,6 @@ export default function Todo({ todo, ShowDelete, shwoUpdate }) {
                 aria-label="delete"
                 style={{
                   color: "gray",
-                  background: "white",
                 }}
               >
                 <ModeEditOutlineOutlinedIcon />
@@ -93,7 +93,6 @@ export default function Todo({ todo, ShowDelete, shwoUpdate }) {
                 aria-label="delete"
                 style={{
                   color: "gray",
-                  background: "white",
                 }}
                 onClick={handleDeleteClick}
               >

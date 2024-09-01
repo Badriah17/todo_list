@@ -175,31 +175,20 @@ export default function TodoList() {
           style={{
             maxHeight: "80vh",
             overflow: "auto",
+            backgroundColor: "transparent",
           }}
         >
           <CardContent>
             <Typography
               variant="h3"
-              style={{ fontWeight: "normal", marginBottom: "25px" }}
+              style={{
+                fontWeight: "normal",
+                marginBottom: "45px",
+                color: "#424242",
+              }}
             >
               مهامي
             </Typography>
-            <Divider />
-
-            <ToggleButtonGroup
-              style={{ direction: "ltr", marginTop: "30px" }}
-              value={displayedTodosType}
-              exclusive
-              onChange={changeDisplayedType}
-              aria-label="text alignment"
-              color="primary"
-            >
-              <ToggleButton value="non-completed">غير المنجز</ToggleButton>
-              <ToggleButton value="completed">المنجز</ToggleButton>
-              <ToggleButton value="all">الكل</ToggleButton>
-            </ToggleButtonGroup>
-
-            {todosJsx}
 
             <Grid container style={{ marginTop: "20px" }} spacing={2}>
               <Grid
@@ -233,12 +222,26 @@ export default function TodoList() {
                   onClick={() => {
                     handleAddClick();
                   }}
-                  disabled={titleInput.length == 0}
+                  // disabled={titleInput.length == 0}
                 >
                   إضافة
                 </Button>
               </Grid>
             </Grid>
+            <ToggleButtonGroup
+              style={{ direction: "ltr", marginTop: "30px" }}
+              value={displayedTodosType}
+              exclusive
+              onChange={changeDisplayedType}
+              aria-label="text alignment"
+              color="primary"
+            >
+              <ToggleButton value="non-completed">غير المنجز</ToggleButton>
+              <ToggleButton value="completed">المنجز</ToggleButton>
+              <ToggleButton value="all">الكل</ToggleButton>
+            </ToggleButtonGroup>
+
+            {todosJsx}
           </CardContent>
         </Card>
       </Container>
